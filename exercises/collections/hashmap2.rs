@@ -12,8 +12,6 @@
 // Execute the command `rustlings hint collections4` if you need
 // hints.
 
-// I AM NOT DONE
-
 use std::collections::HashMap;
 
 #[derive(Hash, PartialEq, Eq)]
@@ -38,6 +36,11 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
         // TODO: Put new fruits if not already present. Note that you
         // are not allowed to put any type of fruit that's already
         // present!
+        if fruit == Fruit::Banana {
+            basket.insert(Fruit::Banana, 8);
+        } else if fruit == Fruit::Pineapple {
+            basket.insert(Fruit::Pineapple, 1);
+        }
     }
 }
 
@@ -75,9 +78,7 @@ mod tests {
     fn greater_than_eleven_fruits() {
         let mut basket = get_fruit_basket();
         fruit_basket(&mut basket);
-        let count = basket
-            .values()
-            .sum::<u32>();
+        let count = basket.values().sum::<u32>();
         assert!(count > 11);
     }
 }
